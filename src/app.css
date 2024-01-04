@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+	@apply w-2;
+	@apply h-2;
+}
+
+::-webkit-scrollbar-track {
+	@apply rounded-md;
+	@apply bg-base-300;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply rounded-md;
+	@apply bg-base-content;
+	/* @apply border-solid border-[1px] border-primary-focus; */
+}
