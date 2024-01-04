@@ -25,6 +25,11 @@ export interface CharacterData {
 	loonyStatus: number;
 }
 
+export interface Label {
+	label: string;
+	color: string;
+}
+
 export interface Trait {
 	trait: string;
 	accoutrements: AccoutrementDetail[];

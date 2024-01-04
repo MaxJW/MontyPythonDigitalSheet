@@ -1,12 +1,6 @@
 <script lang="ts">
 	import { characterStore } from '$lib/stores';
-	import type {
-		CharacterData,
-		AccoutrementDetail,
-		Situation,
-		Retainers,
-		Trait,
-	} from '$lib/types';
+	import type { CharacterData, AccoutrementDetail, Situation, Trait, Label } from '$lib/types';
 	import { situations, traits, retainers } from '$lib/data';
 	import { DiceRoll } from '@dice-roller/rpg-dice-roller';
 	import { toast } from '@zerodevx/svelte-toast';
@@ -38,7 +32,7 @@
 
 	let selectedSituation: Situation | null = null;
 
-	const classOptions = ['Upper', 'Middle', 'Lower'];
+	const classOptions: string[] = ['Upper', 'Middle', 'Lower'];
 
 	const traitHeaderData = [
 		{
@@ -97,7 +91,7 @@
 		},
 	];
 
-	const deathStatusLabels = [
+	const deathStatusLabels: Label[] = [
 		{ label: 'Mr. Neutron', color: '#d3d9ed' },
 		{ label: 'Fine, Fine', color: '#acbbdd' },
 		{ label: 'Getting Better', color: '#8ba1cf' },
@@ -106,7 +100,7 @@
 		{ label: 'No More', color: '#3369af' },
 	];
 
-	const loonyStatusLabels = [
+	const loonyStatusLabels: Label[] = [
 		{ label: 'Reginald Maudling', color: '#fefad9' },
 		{ label: 'Sensible', color: '#fef7be' },
 		{ label: 'Daft', color: '#fdf5a3' },
