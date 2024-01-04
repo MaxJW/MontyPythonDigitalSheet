@@ -576,6 +576,7 @@
 						style={selectedTraits[traitIndex].selectedCheckbox === columnIndex
 							? `background-color: ${traitHeaderData[columnIndex].color}; border: 2px solid ${traitHeaderData[columnIndex].color};`
 							: ''}
+						disabled={isRetainer(name)}
 						checked={selectedTraits[traitIndex].selectedCheckbox === columnIndex}
 						on:change={(event) =>
 							handleCheckboxChange(
@@ -835,6 +836,7 @@
 		padding: 0.5rem;
 		margin-bottom: 1rem;
 		border-radius: 0.25rem;
+		background-color: #3b3b3b;
 		@apply text-slate-100;
 	}
 
@@ -912,6 +914,10 @@
 	.grid-checkbox:checked {
 		background-color: #cea276;
 		border: 2px solid #cea276;
+	}
+	input[type='checkbox'][disabled] {
+		background-color: #232323;
+		border: 2px solid #666666;
 	}
 
 	.grid-dropdown {
