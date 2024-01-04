@@ -1,11 +1,11 @@
 {
 	"name": "Monty Python Character Sheet",
 	"short_name": "MP Character Sheet",
-	"theme_color": "#212121",
-	"background_color": "#212121",
+	"theme_color": "#111728",
+	"background_color": "#111728",
 	"display": "standalone",
 	"orientation": "portrait",
-	"scope": "http://localhost:5173/", //"https://monch.maxwilson.co.uk/",
+	"scope": "https://mpsheet.maxwilson.co.uk/",
 	"start_url": "/",
 	"icons": [
 		{
