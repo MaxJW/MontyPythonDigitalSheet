@@ -272,55 +272,92 @@ export const traits: Traits = {
 		accoutrements: [
 			{
 				name: 'Some Filth (not lovely)',
-				bonus: '+1 to all Trait rolls vs. Lower-Class persons',
-				penalty: '-1 Decorum',
+				modifiers: [
+					{ modifier: 1, trait: 'Animal Husbandry' },
+					{ modifier: 1, trait: 'Trait rolls vs. Lower-Class persons' },
+					{ modifier: -1, trait: 'Decorum' }
+				],
 				cost: '1',
-				notes: '',
+				notes: ''
 			},
 			{
 				name: 'Farm Animal with Licence',
-				bonus: 'Extra +1 Animal Husbandry',
-				penalty: '',
+				modifiers: [
+					{ modifier: 2, trait: 'Animal Husbandry' }
+				],
 				cost: '1-7',
-				notes: `Roll a d8 to determine the type of animal and its value. 1 = Goat. 2 = Sheep. 3 = Pig. 4 = Cow. 5 = Plough horse. 6 = Ox. 7 = Chicken. 8 = Roll again, twice.`,
+				notes: `Roll a d8 to determine the type of animal and its value. 1 = Goat. 2 = Sheep. 3 = Pig. 4 = Cow. 5 = Plough horse. 6 = Ox. 7 = Chicken. 8 = Roll again, twice.`
 			},
 			{
 				name: 'Cloth Sack',
-				bonus: '+1 Strategy',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Animal Husbandry' }, { modifier: 1, trait: 'Strategy' }
+				],
 				cost: '3',
-				notes: `Can hold one other Accoutrement of any type, as long as it isn't pointy.`,
+				notes: `Can hold one other Accoutrement of any type, as long as it isn't pointy.`
 			},
-			{ name: 'Hoe', bonus: '+1 Chastity 3', penalty: '', cost: '3', notes: '' },
+			{
+				name: 'Hoe',
+				modifiers: [
+					{ modifier: 1, trait: 'Animal Husbandry' }, { modifier: 1, trait: 'Chastity' }
+				],
+				cost: '3',
+				notes: ''
+			},
 			{
 				name: 'Pitchfork',
-				bonus: '+1 to all Trait rolls vs. Witches, wizards, and the like',
-				penalty: '-1 Wisdom in the Ways of Science 3',
+				modifiers: [
+					{ modifier: 1, trait: 'Animal Husbandry' },
+					{ modifier: 1, trait: 'Trait rolls vs. Witches, wizards, and the like' },
+					{ modifier: -1, trait: 'Wisdom in the Ways of Science' }
+				],
 				cost: '3',
-				notes: '',
+				notes: ''
 			},
-			{ name: 'Scythe', bonus: '+1 Authority', penalty: '', cost: '5', notes: '' },
+			{
+				name: 'Scythe',
+				modifiers: [
+					{ modifier: 1, trait: 'Animal Husbandry' },
+					{ modifier: 1, trait: 'Authority' }
+				],
+				cost: '5',
+				notes: ''
+			},
 			{
 				name: 'Bird Rattle',
-				bonus: '+1 Glibness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Animal Husbandry' },
+					{ modifier: 1, trait: 'Glibness' }
+				],
 				cost: '5',
-				notes: `Chases away all non-migratory birds`,
+				notes: `Chases away all non-migratory birds`
 			},
-			{ name: 'Harrow', bonus: '+1 Bardistry 7', penalty: '', cost: '7', notes: '' },
+			{
+				name: 'Harrow',
+				modifiers: [
+					{ modifier: 1, trait: 'Animal Husbandry' },
+					{ modifier: 1, trait: 'Bardistry' }
+				],
+				cost: '7',
+				notes: ''
+			},
 			{
 				name: `Sheep's Bladder`,
-				bonus: '+1 Druidry',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Animal Husbandry' },
+					{ modifier: 1, trait: 'Druidry' }
+				],
 				cost: '10',
-				notes: 'One-time use: prevent an earthquake',
+				notes: 'One-time use: prevent an earthquake'
 			},
 			{
 				name: `Webb's Wonder Lettuce`,
-				bonus: '+1 Sorcery',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Animal Husbandry' },
+					{ modifier: 1, trait: 'Sorcery' }
+				],
 				cost: '100',
-				notes: `One-time use: set the timer and lure a single person or creature near. When it detonates, the person or creature snuffs it, and everyone is covered in charred lettuce leaves`,
+				notes: "One-time use: set the timer and lure a single person or creature near. When it detonates, the person or creature snuffs it, and everyone is covered in charred lettuce leaves"
 			},
 		],
 	},
@@ -329,73 +366,93 @@ export const traits: Traits = {
 		accoutrements: [
 			{
 				name: `A Club with Notches in It, One for Each Argument You've Won`,
-				bonus: '+1 Valour',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Argumentation' },
+					{ modifier: 1, trait: 'Valour' }
+				],
 				cost: 3,
-				notes: '',
+				notes: ''
 			},
 			{
 				name: 'Gavel',
-				bonus: '+1 Authority',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Argumentation' },
+					{ modifier: 1, trait: 'Authority' }
+				],
 				cost: 5,
-				notes: '',
+				notes: ''
 			},
 			{
 				name: 'Socratic Toga',
-				bonus: '+1 Wisdom in the Ways of Science',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Argumentation' },
+					{ modifier: 1, trait: 'Wisdom in the Ways of Science' }
+				],
 				cost: 7,
-				notes: '',
+				notes: ''
 			},
 			{
 				name: `Black Barrister's Gown`,
-				bonus: '+1 Subtlety',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Argumentation' },
+					{ modifier: 1, trait: 'Subtlety' }
+				],
 				cost: 7,
-				notes: '',
+				notes: ''
 			},
 			{
 				name: 'A Bundle of Complicated Charts and Diagrams',
-				bonus: '+1 Strategy',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Argumentation' },
+					{ modifier: 1, trait: 'Strategy' }
+				],
 				cost: 8,
-				notes: '',
+				notes: ''
 			},
 			{
 				name: 'A Heap of Historical Records',
-				bonus: '+1 Lorefulness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Argumentation' },
+					{ modifier: 1, trait: 'Lorefulness' }
+				],
 				cost: 8,
-				notes: '',
+				notes: ''
 			},
 			{
 				name: 'A Sheaf of Contracts, Forms, and Legal Documents',
-				bonus: 'Extra +1 Argumentation',
-				penalty: '',
+				modifiers: [
+					{ modifier: 2, trait: 'Argumentation' }
+				],
 				cost: 8,
-				notes: '',
+				notes: ''
 			},
 			{
 				name: 'Portable Lectern',
-				bonus: '+1 Decorum',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Argumentation' },
+					{ modifier: 1, trait: 'Decorum' }
+				],
 				cost: 18,
 				notes: 'Must be set up before it can be used (and the plus can be applied).',
 			},
 			{
 				name: 'Parliament of Fowls: A Book of Debate Poetry',
-				bonus: '+1 to all Trait rolls vs. Bards and other entertainers',
-				penalty: '-1 Authority',
+				modifiers: [
+					{ modifier: 1, trait: 'Argumentation' },
+					{ modifier: 1, trait: 'Trait rolls vs. Bards and other entertainers' },
+					{ modifier: -1, trait: 'Authority' }
+				],
 				cost: 25,
-				notes: '',
+				notes: ''
 			},
 			{
 				name: 'Magna Carta (rough draft)',
-				bonus: '+1 to all Trait rolls vs. Upper-Class persons',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Argumentation' },
+					{ modifier: 1, trait: 'Trait rolls vs. Upper-Class persons' }
+				],
 				cost: 100,
-				notes: `One-time use: defeat a Sovereign. No roll required; the Sovereign is immediately overcome as if the required number of Deeds to defeat them had been met. They remain on the throne, but they've lost a great deal of authority and respect…and they are no longer an obstacle to your aims.`,
+				notes: "One-time use: defeat a Sovereign. No roll required; the Sovereign is immediately overcome as if the required number of Deeds to defeat them had been met. They remain on the throne, but they've lost a great deal of authority and respect... and they are no longer an obstacle to your aims.",
 			},
 		],
 	},
@@ -404,71 +461,93 @@ export const traits: Traits = {
 		accoutrements: [
 			{
 				name: 'Gonfalon',
-				bonus: '+1 Strategy',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Authority' },
+					{ modifier: 1, trait: 'Strategy' }
+				],
 				cost: 3,
 				notes: 'Must have a Retainer.',
 			},
 			{
 				name: 'Buisine',
-				bonus: '+1 Bardistry',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Authority' },
+					{ modifier: 1, trait: 'Bardistry' }
+				],
 				cost: 6,
 				notes: "A herald's trumpet for blowing fanfares. A Retainer is required. One mustn't toot one's own horn.",
 			},
 			{
 				name: 'Sheaf of Pedigree Parchments',
-				bonus: '+1 Lorefulness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Authority' },
+					{ modifier: 1, trait: 'Lorefulness' }
+				],
 				cost: 8,
 				notes: '',
 			},
 			{
 				name: "Ancestor's Framed Portrait",
-				bonus: '+1 Purpose',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Authority' },
+					{ modifier: 1, trait: 'Purpose' }
+				],
 				cost: 10,
 				notes: '',
 			},
 			{
 				name: 'Shield Emblazoned with Coat of Arms',
-				bonus: '+1 Valour',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Authority' },
+					{ modifier: 1, trait: 'Valour' }
+				],
 				cost: 14,
 				notes: '',
 			},
 			{
 				name: 'Signet Ring',
-				bonus: '+1 Decorum',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Authority' },
+					{ modifier: 1, trait: 'Decorum' }
+				],
 				cost: 15,
 				notes: '',
 			},
 			{
 				name: 'Letter of the Marque',
-				bonus: '+1 to all Trait rolls vs. pirates',
-				penalty: '--1 Decorum',
+				modifiers: [
+					{ modifier: 1, trait: 'Authority' },
+					{ modifier: 1, trait: 'Trait rolls vs. pirates' },
+					{ modifier: -1, trait: 'Decorum' }
+				],
 				cost: 20,
 				notes: '',
 			},
 			{
 				name: 'Applause/Laughs Pennon',
-				bonus: '+1 Luck',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Authority' },
+					{ modifier: 1, trait: 'Luck' }
+				],
 				cost: 22,
 				notes: 'Can be waved to appease an unhappy studio audience.',
 			},
 			{
 				name: 'Crown',
-				bonus: '+1 to all Trait rolls vs. Upper-Class persons',
-				penalty: '-1 Luck',
+				modifiers: [
+					{ modifier: 1, trait: 'Authority' },
+					{ modifier: 1, trait: 'Trait rolls vs. Upper-Class persons' },
+					{ modifier: -1, trait: 'Luck' }
+				],
 				cost: 25,
 				notes: '',
 			},
 			{
 				name: 'The Domesday Book',
-				bonus: '+1 Wisdom in the Ways of Science',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Authority' },
+					{ modifier: 1, trait: 'Wisdom in the Ways of Science' }
+				],
 				cost: 100,
 				notes: "Once per day, you can wield the book to levy a tax. Make an Authority roll (Strewthing/Spamming as normal). That many Shoppekeepers in the area must hand over d10 pieces of Currency each. If you carry this item openly, Shoppekeepers and merchants will show great disdain, or they'll be really nice and later hire someone to kill you.",
 			},
@@ -479,71 +558,92 @@ export const traits: Traits = {
 		accoutrements: [
 			{
 				name: 'Tambourine',
-				bonus: '+1 Glibness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Bardistry' },
+					{ modifier: 1, trait: 'Glibness' }
+				],
 				cost: 2,
 				notes: '',
 			},
 			{
 				name: 'Trumpet',
-				bonus: '+1 Valour',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Bardistry' },
+					{ modifier: 1, trait: 'Valour' }
+				],
 				cost: 4,
 				notes: 'Attracts geese when played.',
 			},
 			{
 				name: 'Shadow Lantern',
-				bonus: '+1 Sorcery',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Bardistry' },
+					{ modifier: 1, trait: 'Sorcery' }
+				],
 				cost: 5,
 				notes: 'Must be lit before use. Projects images of witches, dragons, and other exciting characters.',
 			},
 			{
 				name: 'Bagpipes',
-				bonus: '+1 Heartiness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Bardistry' },
+					{ modifier: 1, trait: 'Heartiness' }
+				],
 				cost: 6,
 				notes: '',
 			},
 			{
 				name: 'Lute',
-				bonus: '+1 Nimbleness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Bardistry' },
+					{ modifier: 1, trait: 'Nimbleness' }
+				],
 				cost: 7,
 				notes: '',
 			},
 			{
 				name: 'Harp',
-				bonus: '+1 Chastity',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Bardistry' },
+					{ modifier: 1, trait: 'Chastity' }
+				],
 				cost: 8,
 				notes: '',
 			},
 			{
 				name: 'Red Shoes Sprinkled with Holy Oil',
-				bonus: '+1 Purpose',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Bardistry' },
+					{ modifier: 1, trait: 'Purpose' }
+				],
 				cost: 12,
 				notes: '',
 			},
 			{
 				name: 'Portable Music Stand',
-				bonus: '+1 Authority',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Bardistry' },
+					{ modifier: 1, trait: 'Authority' }
+				],
 				cost: 18,
 				notes: 'Must be set up before it can be used (and the plus can be applied).',
 			},
 			{
 				name: 'Portative Organ',
-				bonus: '+1 to all Trait rolls vs. French persons',
-				penalty: '-1 Animal Husbandry',
+				modifiers: [
+					{ modifier: 1, trait: 'Bardistry' },
+					{ modifier: 1, trait: 'Trait rolls vs. French persons' },
+					{ modifier: -1, trait: 'Animal Husbandry' }
+				],
 				cost: 25,
 				notes: '',
 			},
 			{
 				name: 'Positive Organ',
-				bonus: '+1 to all Trait rolls vs. clergy',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Bardistry' },
+					{ modifier: 1, trait: 'Trait rolls vs. clergy' }
+				],
 				cost: 100,
 				notes: 'Requires a cart to transport, and a second person to operate the bellows. Once per day, you can attempt to play a rousing voluntary. Make a Bardistry roll (Strewthing/Spamming as normal). That many nearby people are converted to a religion of your choice. If you Spam It, the organ explodes heretically, in addition to normal Spam results.',
 			},
@@ -554,71 +654,93 @@ export const traits: Traits = {
 		accoutrements: [
 			{
 				name: 'Fashionable Tights',
-				bonus: '+1 Decorum',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Chastity' },
+					{ modifier: 1, trait: 'Decorum' }
+				],
 				cost: 3,
 				notes: '',
 			},
 			{
 				name: 'Riding Crop',
-				bonus: '+1 Animal Husbandry',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Chastity' },
+					{ modifier: 1, trait: 'Animal Husbandry' }
+				],
 				cost: 3,
 				notes: "What's this doing here? It should be in Animal Husbandry!",
 			},
 			{
 				name: 'Elaborate Codpiece',
-				bonus: '+1 Decorum',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Chastity' },
+					{ modifier: 1, trait: 'Decorum' }
+				],
 				cost: 8,
 				notes: 'Nearby ducks attempt to mate with it.',
 			},
 			{
 				name: 'Chastity Belt',
-				bonus: '+1 Chastity',
-				penalty: '-1 Glibness',
+				modifiers: [
+					{ modifier: 2, trait: 'Chastity' },
+					{ modifier: -1, trait: 'Glibness' }
+				],
 				cost: 9,
 				notes: '',
 			},
 			{
 				name: 'Mantle and Veil of the Vestal Virgin',
-				bonus: '+1 to all Trait rolls vs. cads, lechers, philanderers, and other naughty persons',
-				penalty: '-1 Druidry',
+				modifiers: [
+					{ modifier: 1, trait: 'Chastity' },
+					{ modifier: 1, trait: 'Trait rolls vs. cads, lechers, philanderers, and other naughty persons' },
+					{ modifier: -1, trait: 'Druidry' }
+				],
 				cost: 13,
 				notes: '',
 			},
 			{
-				name: 'Quick-Pitch Pavillion',
-				bonus: '+1 Purpose',
-				penalty: '',
+				name: 'Quick-Pitch Pavilion',
+				modifiers: [
+					{ modifier: 1, trait: 'Chastity' },
+					{ modifier: 1, trait: 'Purpose' }
+				],
 				cost: 17,
 				notes: "This item is marketed as the 'Quickie,' but we're not sure why, as it's designed for on-the-go meditation and prayer only. Must be erected before use.",
 			},
 			{
 				name: 'Victor Mature Abdominal Corset',
-				bonus: '+1 Heartiness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Chastity' },
+					{ modifier: 1, trait: 'Heartiness' }
+				],
 				cost: 20,
 				notes: '',
 			},
 			{
 				name: 'The Bleed-It Kosher Truss',
-				bonus: '+1 to all Trait rolls vs. Monks, Nuns, Hermits, and other ascetics',
-				penalty: '-1 Heartiness',
+				modifiers: [
+					{ modifier: 1, trait: 'Chastity' },
+					{ modifier: 1, trait: 'Trait rolls vs. Monks, Nuns, Hermits, and other ascetics' },
+					{ modifier: -1, trait: 'Heartiness' }
+				],
 				cost: 23,
 				notes: '',
 			},
 			{
 				name: 'Skeleton Key',
-				bonus: '+1 Subtlety',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Chastity' },
+					{ modifier: 1, trait: 'Subtlety' }
+				],
 				cost: 25,
-				notes: 'To be used exclusively for locking chastity belts and doors between you and your lover. Why? How were you planning to use it? Well I never!',
+				notes: 'To be used exclusively for locking chastity belts and doors between you and your lover. Why? How were you planning to use it? Well, I never!',
 			},
 			{
 				name: "The Hercules Hold-'em-In",
-				bonus: '+1 Valour',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Chastity' },
+					{ modifier: 1, trait: 'Valour' }
+				],
 				cost: 100,
 				notes: 'One-time use: remove the device, which destroys it. The rush of blood to previously held-in parts gives you a sudden burst of vivacity. Reset Death status to your maximum, and for the remainder of the scene you may perform three Deeds on each of your turns.',
 			},
@@ -629,71 +751,91 @@ export const traits: Traits = {
 		accoutrements: [
 			{
 				name: 'Phrygian Cap',
-				bonus: '+1 Nimbleness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Decorum' },
+					{ modifier: 1, trait: 'Nimbleness' }
+				],
 				cost: 5,
 				notes: 'Often associated with Mithras, the Roman god of freedom.',
 			},
 			{
 				name: 'Wimple',
-				bonus: '+1 Purpose',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Decorum' },
+					{ modifier: 1, trait: 'Purpose' }
+				],
 				cost: 6,
 				notes: '',
 			},
 			{
 				name: 'Barbette',
-				bonus: '+1 Luck',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Decorum' },
+					{ modifier: 1, trait: 'Luck' }
+				],
 				cost: '7-37',
 				notes: 'Decorated with precious stones. Roll a d30 to see how many Gemstones are included.',
 			},
 			{
 				name: 'Surcoat',
-				bonus: '+1 Valour',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Decorum' },
+					{ modifier: 1, trait: 'Valour' }
+				],
 				cost: 8,
 				notes: '',
 			},
 			{
 				name: 'Hennin',
-				bonus: 'Extra +1 Decorum',
-				penalty: '',
+				modifiers: [
+					{ modifier: 2, trait: 'Decorum' }
+				],
 				cost: 9,
 				notes: 'Decorated with precious stones. Roll a d30 to see how many Gemstones are included.',
 			},
 			{
 				name: '12 Small Apparel Bells',
-				bonus: '+1 to all Trait rolls vs. children',
-				penalty: '-1 Subtlety',
+				modifiers: [
+					{ modifier: 1, trait: 'Decorum' },
+					{ modifier: 1, trait: 'Trait rolls vs. children' },
+					{ modifier: -1, trait: 'Subtlety' }
+				],
 				cost: 10,
 				notes: '',
 			},
 			{
 				name: 'Poulaines',
-				bonus: '+1 to all Trait rolls vs. Upper-Class persons',
-				penalty: '-1 Nimbleness',
+				modifiers: [
+					{ modifier: 1, trait: 'Decorum' },
+					{ modifier: 1, trait: 'Trait rolls vs. Upper-Class persons' },
+					{ modifier: -1, trait: 'Nimbleness' }
+				],
 				cost: 12,
 				notes: '',
 			},
 			{
 				name: 'Silk Cotte',
-				bonus: '+1 Glibness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Decorum' },
+					{ modifier: 1, trait: 'Glibness' }
+				],
 				cost: 20,
 				notes: "Like an overlarge poncho - but it's silk!",
 			},
 			{
 				name: "The Observer's Book of Princes",
-				bonus: '+1 Lorefulness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Decorum' },
+					{ modifier: 1, trait: 'Lorefulness' }
+				],
 				cost: 25,
 				notes: "A book containing all bona fide, unattached regal persons, not just princes. (The title hasn't been updated in years. The marketing department is adamant about maintaining brand velocity... or something.)",
 			},
 			{
 				name: 'The Book of Etiquette',
-				bonus: '',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Decorum' }
+				],
 				cost: 100,
 				notes: "One-time use: burn, shred, or otherwise thoroughly destroy the book. All Upper-Class persons who see you do it faint dramatically from the shock. When they come to, they'll think you're the most vile, abhorrent knave and tell all their friends about you... but you'll be long gone by then, surely.",
 			},
@@ -704,71 +846,89 @@ export const traits: Traits = {
 		accoutrements: [
 			{
 				name: 'A Sprig of Mistletoe',
-				bonus: '',
-				penalty: '',
+				modifiers: [{ modifier: 1, trait: 'Druidry' }],
 				cost: 3,
 				notes: 'One-time use: if you become No More, you immediately reincarnate in the body of a common NPC nearby, retaining all of your Traits, memories, etc.',
 			},
 			{
 				name: 'Bone Club',
-				bonus: '+1 Valour',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Druidry' },
+					{ modifier: 1, trait: 'Valour' }
+				],
 				cost: 3,
 				notes: '',
 			},
 			{
 				name: 'Wildflower Press',
-				bonus: '+1 Decorum',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Druidry' },
+					{ modifier: 1, trait: 'Decorum' }
+				],
 				cost: 4,
 				notes: '',
 			},
 			{
 				name: 'Set of Ogham Staves',
-				bonus: '+1 Lorefulness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Druidry' },
+					{ modifier: 1, trait: 'Lorefulness' }
+				],
 				cost: 4,
 				notes: '',
 			},
 			{
 				name: "Ape's Skull",
-				bonus: '+1 Sorcery',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Druidry' },
+					{ modifier: 1, trait: 'Sorcery' }
+				],
 				cost: 5,
-				notes: "You occasionally have the desire to look at it and say, 'Yorick, stop messing about!' You don't know why.",
+				notes: "You occasionally have the desire to look at it and say, 'Yorick, stop messing about!'. You don't know why.",
 			},
 			{
 				name: 'Stuffed Furry Creature',
-				bonus: '+1 Luck',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Druidry' },
+					{ modifier: 1, trait: 'Luck' }
+				],
 				cost: 6,
 				notes: '',
 			},
 			{
 				name: 'Crown of Oak Leaves',
-				bonus: '+1 Druidry',
-				penalty: '-1 Valour',
+				modifiers: [
+					{ modifier: 2, trait: 'Druidry' }
+				],
 				cost: 6,
 				notes: '',
 			},
 			{
 				name: 'Miniature Wicker Man',
-				bonus: '+1 to all Trait rolls vs. monotheists',
-				penalty: '-1 Valour',
+				modifiers: [
+					{ modifier: 1, trait: 'Druidry' },
+					{ modifier: 1, trait: 'Trait rolls vs. monotheists' },
+					{ modifier: -1, trait: 'Valour' }
+				],
 				cost: 10,
 				notes: '',
 			},
 			{
 				name: 'A Dolmen',
-				bonus: '+1 to all Trait rolls vs. Barbarians and other pagans',
-				penalty: '-1 Subtlety',
+				modifiers: [
+					{ modifier: 1, trait: 'Druidry' },
+					{ modifier: 1, trait: 'Trait rolls vs. Barbarians and other pagans' },
+					{ modifier: -1, trait: 'Subtlety' }
+				],
 				cost: 12,
 				notes: 'Requires a cart to transport.',
 			},
 			{
 				name: "Sir Charles of Butley Down's Guide to Fauna and Extra-Scary Fauna",
-				bonus: '+1 Wisdom in the Ways of Science',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Druidry' },
+					{ modifier: 1, trait: 'Wisdom in the Ways of Science' }
+				],
 				cost: 100,
 				notes: "Once per day (that's really all one can bear of Sir Charles of Butley Down's writing), you can look up a Beast or Monstrosity you can see and learn everything about them. Your HoLE will provide you with the details you require.",
 			},
@@ -779,71 +939,91 @@ export const traits: Traits = {
 		accoutrements: [
 			{
 				name: 'A Box',
-				bonus: '',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Glibness' }
+				],
 				cost: 2,
 				notes: 'Must be stood upon before it can be used (and the plus can be applied). Can carry one additional Accoutrement of any type.',
 			},
 			{
 				name: 'VOM-IT Brand Cold Sick (lump of)',
-				bonus: '+1 Sorcery',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Glibness' },
+					{ modifier: 1, trait: 'Sorcery' }
+				],
 				cost: 4,
 				notes: '',
 			},
 			{
 				name: 'Leather Jack of Scum',
-				bonus: '+1 Heartiness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Glibness' },
+					{ modifier: 1, trait: 'Heartiness' }
+				],
 				cost: 6,
 				notes: "Must be slathered on one's hair before it can be used (and the plus can be applied). May also be used as foot ointment or salad dressing.",
 			},
 			{
 				name: 'Removable Moustache',
-				bonus: '+1 to all Trait rolls vs. French persons',
-				penalty: '-1 Chastity',
+				modifiers: [
+					{ modifier: 1, trait: 'Glibness' },
+					{ modifier: 1, trait: 'Trait rolls vs. French persons' },
+					{ modifier: -1, trait: 'Chastity' }
+				],
 				cost: 7,
 				notes: '',
 			},
 			{
 				name: "Fool's Hat",
-				bonus: '+1 to all Trait rolls vs. Upper-Class persons',
-				penalty: '-1 Authority',
+				modifiers: [
+					{ modifier: 1, trait: 'Glibness' },
+					{ modifier: 1, trait: 'Trait rolls vs. Upper-Class persons' },
+					{ modifier: -1, trait: 'Authority' }
+				],
 				cost: 8,
 				notes: '',
 			},
 			{
 				name: 'Sir Dagonet Mask',
-				bonus: '+1 to all Trait rolls vs. Knights of the Round Table',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Glibness' },
+					{ modifier: 1, trait: 'Trait rolls vs. Knights of the Round Table' }
+				],
 				cost: 9,
 				notes: "A mask fashioned to resemble King Arthur's famously witty fool.",
 			},
 			{
 				name: 'Turkish Little Rude Plant',
-				bonus: '+1 Druidry',
-				penalty: '',
+				modifiers: [
+					{ modifier: 2, trait: 'Druidry' }
+				],
 				cost: 10,
 				notes: 'A plant with green outer leaves splayed back to reveal a small, accurately sculpted bum.',
 			},
 			{
 				name: 'Punch and Judy Puppets',
-				bonus: '+1 to all Trait rolls vs. Lower-Class persons and children',
-				penalty: '-1 Authority',
+				modifiers: [
+					{ modifier: 1, trait: 'Glibness' },
+					{ modifier: 1, trait: 'Trait rolls vs. Lower-Class persons and children' },
+					{ modifier: -1, trait: 'Authority' }
+				],
 				cost: 11,
 				notes: '',
 			},
 			{
 				name: 'Motley Full-Body Tights',
-				bonus: '+1 Nimbleness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Glibness' },
+					{ modifier: 1, trait: 'Nimbleness' }
+				],
 				cost: 20,
 				notes: '',
 			},
 			{
 				name: "Johnson's Novelties",
-				bonus: 'Extra +1 Glibness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 2, trait: 'Glibness' }
+				],
 				cost: 100,
 				notes: "One-time use: break out the full kit at once. Make a Glibness roll (Strewthing/Spamming as normal). On a 2+, that number of people who hold neutral or negative opinions of you and your companions now view you as welcome guests. If you Spam it, everyone is covered in vomit, fungus, alcohol, snakes, skunk juice, and pooh pooh, and they're rather poor sports about the whole thing. This in addition to the normal Spam results.",
 			},
@@ -854,71 +1034,91 @@ export const traits: Traits = {
 		accoutrements: [
 			{
 				name: 'Animal Companion',
-				bonus: '+1 Animal Husbandry',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Heartiness' },
+					{ modifier: 1, trait: 'Animal Husbandry' }
+				],
 				cost: '1-6',
 				notes: 'Roll a d6 to determine type and value. 1 = Trained flea. 2 = Untrained toad. 3 = Disdainful cat. 4 = Alive parrot. 5 = Pissy spaniel. 6 = Nit-picking monkey.',
 			},
 			{
 				name: 'A Wooden Churn of Bodily Substance',
-				bonus: '+1 to all Trait rolls vs. Gumbys',
-				penalty: '-1 Wisdom in the Ways of Science',
+				modifiers: [
+					{ modifier: 1, trait: 'Heartiness' },
+					{ modifier: 1, trait: 'Trait rolls vs. Gumbys' },
+					{ modifier: -1, trait: 'Wisdom in the Ways of Science' }
+				],
 				cost: 2,
 				notes: '',
 			},
 			{
 				name: 'Flint & Steel',
-				bonus: '+1 Luck',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Heartiness' },
+					{ modifier: 1, trait: 'Luck' }
+				],
 				cost: 4,
 				notes: 'Can be used to make fire.',
 			},
 			{
 				name: 'Lamprey Loose Cover',
-				bonus: '+1 Nimbleness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Heartiness' },
+					{ modifier: 1, trait: 'Nimbleness' }
+				],
 				cost: 5,
 				notes: 'One-size-fits-all outwear of homespun that stops dust getting in the cracks and crevices that Nature left unprotected.',
 			},
 			{
 				name: 'Sack of Truffles',
-				bonus: '+1 Druidry',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Heartiness' },
+					{ modifier: 1, trait: 'Druidry' }
+				],
 				cost: 8,
 				notes: 'Nearby pigs follow you around.',
 			},
 			{
 				name: 'Cupping Cups',
-				bonus: '+1 Bardistry',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Heartiness' },
+					{ modifier: 1, trait: 'Bardistry' }
+				],
 				cost: 12,
 				notes: 'A set of several small cups made of horn, which are heated and placed on the skin to create a suction effect and stimulate blood flow',
 			},
 			{
 				name: 'Surgical Stockings',
-				bonus: '+1 Chastity',
-				penalty: '-1 Decorum',
+				modifiers: [
+					{ modifier: 1, trait: 'Heartiness' },
+					{ modifier: 1, trait: 'Chastity' },
+					{ modifier: -1, trait: 'Decorum' }
+				],
 				cost: 14,
 				notes: '',
 			},
 			{
 				name: "Sack of Wilkinson's Number 8 Laxative Cereal",
-				bonus: '',
-				penalty: '',
+				modifiers: [{ modifier: 1, trait: 'Heartiness' }],
 				cost: 15,
 				notes: 'Goes through one like an Italian sports chariot. One-time use: ingest the whole sack at once to flush out any poison, illness, or curse. Not recommended for use within two miles of polite company',
 			},
 			{
 				name: 'Rancid Polecat No. 2 (eau de toilette)',
-				bonus: '+1 Chastity',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Heartiness' },
+					{ modifier: 1, trait: 'Chastity' }
+				],
 				cost: 25,
 				notes: 'One-time use: douse yourself with an entire bottle to repel Beasts for one day.',
 			},
 			{
 				name: 'Sack of Ano-Weet POW!',
-				bonus: '+1 Purpose',
-				penalty: '-1 Decorum',
+				modifiers: [
+					{ modifier: 1, trait: 'Heartiness' },
+					{ modifier: 1, trait: 'Purpose' },
+					{ modifier: -1, trait: 'Decorum' }
+				],
 				cost: 100,
 				notes: "Cereal wheat that unclogs the plumbing. Causes gas. One-time use: remove the miniature Pope that comes in each sack and make a d30 roll on the Cleric's Spiffing Serious Ability table, no matter what your Situation is.",
 			},
@@ -929,71 +1129,94 @@ export const traits: Traits = {
 		accoutrements: [
 			{
 				name: 'A Short History of History Books by R.T. Boredom',
-				bonus: '+1 to all Trait rolls vs. scholars, tutors, researchers, and the like',
-				penalty: '-1 Argumentation',
+				modifiers: [
+					{ modifier: 1, trait: 'Lorefulness' },
+					{ modifier: 1, trait: 'Trait rolls vs. scholars, tutors, researchers, and the like' },
+					{ modifier: -1, trait: 'Argumentation' }
+				],
 				cost: 6,
 				notes: '',
 			},
 			{
 				name: 'Pileus',
-				bonus: '+1 Decorum',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Lorefulness' },
+					{ modifier: 1, trait: 'Decorum' }
+				],
 				cost: 8,
 				notes: '',
 			},
 			{
 				name: "Martin of Bedford's A Short History of Chairs, Tables, and Pieces of Wood",
-				bonus: '+1 to all Trait rolls vs. Burghers and other Middle-Class persons',
-				penalty: '-1 Glibness',
+				modifiers: [
+					{ modifier: 1, trait: 'Lorefulness' },
+					{ modifier: 1, trait: 'Trait rolls vs. Burghers and other Middle-Class persons' },
+					{ modifier: -1, trait: 'Glibness' }
+				],
 				cost: 10,
 				notes: '',
 			},
 			{
 				name: "Yalt's Forbidden Hungarian Phrase Book",
-				bonus: '+1 Glibness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Lorefulness' },
+					{ modifier: 1, trait: 'Glibness' }
+				],
 				cost: 11,
 				notes: '',
 			},
 			{
 				name: 'Stone Me: The Autobiography of St. Stephen',
-				bonus: '+1 Purpose',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Lorefulness' },
+					{ modifier: 1, trait: 'Purpose' }
+				],
 				cost: 14,
 				notes: '',
 			},
 			{
 				name: '78-page Dynamo Tension Muscle-Building Course',
-				bonus: '+1 Valour',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Lorefulness' },
+					{ modifier: 1, trait: 'Valour' }
+				],
 				cost: 17,
 				notes: '',
 			},
 			{
 				name: 'Clay Cup, Sumerian, 4th Dynasty',
-				bonus: '+1 Sorcery',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Lorefulness' },
+					{ modifier: 1, trait: 'Sorcery' }
+				],
 				cost: 23,
 				notes: 'Often mistaken for the Holy Grail.',
 			},
 			{
 				name: 'The Book of Armaments',
-				bonus: '+1 Strategy',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Lorefulness' },
+					{ modifier: 1, trait: 'Strategy' }
+				],
 				cost: 24,
 				notes: '',
 			},
 			{
 				name: 'Immovable-Type Printing Press',
-				bonus: '+1 Animal Husbandry',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Lorefulness' },
+					{ modifier: 1, trait: 'Animal Husbandry' }
+				],
 				cost: 25,
 				notes: "Requires a cart to transport. To determine the book it prints, roll a d6. 1 = Toad-Sexing as a Money Earner. 2 = Teach Yourself Toad-Sexing. 3 = A Midsummer Night's Toad-Sexing (play), 4 = Forever Toad-Sexing. 5 = My Life with a Toad-Sexer. 6 = Stop Yourself Toad-Sexing.",
 			},
 			{
 				name: 'The World Encyclopaedia of Carnal Knowledge',
-				bonus: '+1 Wisdom in the Ways of Science',
-				penalty: '-1 Chastity',
+				modifiers: [
+					{ modifier: 1, trait: 'Lorefulness' },
+					{ modifier: 1, trait: 'Wisdom in the Ways of Science' },
+					{ modifier: -1, trait: 'Chastity' }
+				],
 				cost: 100,
 				notes: "Once per day (it's really all one's anatomy can take), you can consult the book to produce a fact that will cause all celibates, ascetics, and abstainers within hearing distance to be deeply depressed about what they're missing. They are unable to do anything but sit and pout for the rest of the day. One-time use: rip out all the illustrations (destroying the book) to produce 100 Naughty Pictures (a Currency).",
 			},
@@ -1004,71 +1227,94 @@ export const traits: Traits = {
 		accoutrements: [
 			{
 				name: "Rabbit's Foot",
-				bonus: 'Extra +1 Luck',
-				penalty: '-1 Animal Husbandry',
+				modifiers: [
+					{ modifier: 2, trait: 'Luck' },
+					{ modifier: -1, trait: 'Animal Husbandry' }
+				],
 				cost: 2,
 				notes: '',
 			},
 			{
 				name: 'Horseshoe',
-				bonus: '+1 Nimbleness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Luck' },
+					{ modifier: 1, trait: 'Nimbleness' }
+				],
 				cost: 3,
 				notes: '',
 			},
 			{
 				name: 'Four-Leaf Clover',
-				bonus: '+1 Bardistry',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Luck' },
+					{ modifier: 1, trait: 'Bardistry' }
+				],
 				cost: 6,
 				notes: '',
 			},
 			{
 				name: 'Pagan Goddess Figurine (tiny)',
-				bonus: '+1 to all Trait rolls vs. Barbarians and other pagans',
-				penalty: '-1 Purpose',
+				modifiers: [
+					{ modifier: 1, trait: 'Luck' },
+					{ modifier: 1, trait: 'Trait rolls vs. Barbarians and other pagans' },
+					{ modifier: -1, trait: 'Purpose' }
+				],
 				cost: 7,
 				notes: '',
 			},
 			{
 				name: 'Pouch of Fine Salt',
-				bonus: '+1 Decorum',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Luck' },
+					{ modifier: 1, trait: 'Decorum' }
+				],
 				cost: 8,
 				notes: '',
 			},
 			{
 				name: 'Garden Gnome',
-				bonus: '+1 to all Trait rolls vs. Vikings',
-				penalty: '-1 Authority',
+				modifiers: [
+					{ modifier: 1, trait: 'Luck' },
+					{ modifier: 1, trait: 'Trait rolls vs. Vikings' },
+					{ modifier: -1, trait: 'Authority' }
+				],
 				cost: 12,
 				notes: '',
 			},
 			{
 				name: 'Pouch of 13 Sacred Acorns',
-				bonus: '+1 Druidry',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Luck' },
+					{ modifier: 1, trait: 'Druidry' }
+				],
 				cost: 13,
 				notes: 'You can spend these as Currency, but once one or more of them is removed from the pouch, the item loses its plus and all the Acorns are just Currency.',
 			},
 			{
 				name: 'Deer Antler Hat',
-				bonus: "+1 to all Trait rolls vs. Knights Who Say 'Ni'",
-				penalty: '-1 Subtlety',
+				modifiers: [
+					{ modifier: 1, trait: 'Luck' },
+					{ modifier: 1, trait: "Trait rolls vs. Knights Who Say 'Ni'" },
+					{ modifier: -1, trait: 'Subtlety' }
+				],
 				cost: 16,
 				notes: '',
 			},
 			{
 				name: 'Amber',
-				bonus: '+1 Wisdom in the Ways of Science',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Luck' },
+					{ modifier: 1, trait: 'Wisdom in the Ways of Science' }
+				],
 				cost: 23,
 				notes: '',
 			},
 			{
 				name: 'Stone Gargoyle',
-				bonus: '+1 Purpose',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Luck' },
+					{ modifier: 1, trait: 'Purpose' }
+				],
 				cost: 100,
 				notes: 'Requires a cart to transport. One-time use: the gargoyle wakes up and makes an extra-ugly face. One Monstrosity that sees it scarpers with the gargoyle in pursuit. Neither are ever seen again, and the Monstrosity is defeated, as if through Deeds.',
 			},
@@ -1079,73 +1325,95 @@ export const traits: Traits = {
 		accoutrements: [
 			{
 				name: 'Balancing Staff',
-				bonus: '+1 Strategy',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Nimbleness' },
+					{ modifier: 1, trait: 'Strategy' }
+				],
 				cost: 4,
 				notes: '',
 			},
 			{
 				name: 'Set of Embroidered Silk Handkerchiefs',
-				bonus: '+1 Decorum',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Nimbleness' },
+					{ modifier: 1, trait: 'Decorum' }
+				],
 				cost: 7,
 				notes: '',
 			},
 			{
 				name: 'Dashing Cape with Extra Flowiness',
-				bonus: '+1 Valour',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Nimbleness' },
+					{ modifier: 1, trait: 'Valour' }
+				],
 				cost: 9,
 				notes: '',
 			},
 			{
 				name: 'Halitosis-Brand Body Rub',
-				bonus: '+1 to all Trait rolls vs. Gumbys',
-				penalty: '-1 Decorum',
+				modifiers: [
+					{ modifier: 1, trait: 'Nimbleness' },
+					{ modifier: 1, trait: 'Trait rolls vs. Gumbys' },
+					{ modifier: -1, trait: 'Decorum' }
+				],
 				cost: 10,
 				notes: '',
 			},
 			{
 				name: 'Split-Crotch Breeches',
-				bonus: '+1 Nimbleness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 2, trait: 'Nimbleness' }
+				],
 				cost: 11,
 				notes: '',
 			},
 			{
 				name: 'Fingerless Gloves',
-				bonus: '+1 Bardistry',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Nimbleness' },
+					{ modifier: 1, trait: 'Bardistry' }
+				],
 				cost: 12,
 				notes: '',
 			},
 			{
 				name: 'Eel-Skin Boots',
-				bonus: '+1 Subtlety',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Nimbleness' },
+					{ modifier: 1, trait: 'Subtlety' }
+				],
 				cost: 20,
 				notes: '',
 			},
 			{
 				name: 'Pixie Hat with Pointy Ears',
-				bonus: '+1 Druidry',
-				penalty: '-1 Sorcery',
+				modifiers: [
+					{ modifier: 1, trait: 'Nimbleness' },
+					{ modifier: 1, trait: 'Druidry' },
+					{ modifier: -1, trait: 'Sorcery' }
+				],
 				cost: 21,
 				notes: 'Causes pixies to attack on sight.',
 			},
 			{
 				name: 'Llama-Skin Gloves',
-				bonus: '+1 Glibness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Nimbleness' },
+					{ modifier: 1, trait: 'Glibness' }
+				],
 				cost: 25,
 				notes: 'Causes Llamas to attack on sight.',
 			},
 			{
 				name: 'Pouch of Rid-a-Weasel-Stoat-Rat-Mouse-Rabbitex',
-				bonus: '+1 to all Trait rolls vs. small woodland creatures',
-				penalty: '-1 Heartiness',
+				modifiers: [
+					{ modifier: 1, trait: 'Nimbleness' },
+					{ modifier: 1, trait: 'Trait rolls vs. small woodland creatures' },
+					{ modifier: -1, trait: 'Heartiness' }
+				],
 				cost: 100,
-				notes: 'A talcum powder for grip enhancement. One-time use: cover body with the entire contents of the pouch to repel all small woodland creatures, rodents, and rodential persons within a mile, for one day.',
+				notes: 'A talcum powder for grip enhancement. One-time use: cover the body with the entire contents of the pouch to repel all small woodland creatures, rodents, and rodential persons within a mile, for one day.',
 			},
 		],
 	},
@@ -1154,71 +1422,95 @@ export const traits: Traits = {
 		accoutrements: [
 			{
 				name: 'Pate Plank',
-				bonus: '+1 to all Trait rolls vs. clergy',
-				penalty: '-1 Wisdom in the Ways of Science',
+				modifiers: [
+					{ modifier: 1, trait: 'Purpose' },
+					{ modifier: 1, trait: 'Trait rolls vs. clergy' },
+					{ modifier: -1, trait: 'Wisdom in the Ways of Science' }
+				],
 				cost: 2,
-				notes: 'One-time use: whilst chanting in Latin, break it over your head. Suffer 1 bit of Death, move Purpose four degrees towards Serious, and move all other Traits one degree towards Silly. ',
+				notes: 'One-time use: whilst chanting in Latin, break it over your head. Suffer 1 bit of Death, move Purpose four degrees towards Serious, and move all other Traits one degree towards Silly.',
 			},
 			{
 				name: 'Hair Shirt',
-				bonus: '+1 Animal Husbandry',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Purpose' },
+					{ modifier: 1, trait: 'Animal Husbandry' }
+				],
 				cost: 3,
 				notes: '',
 			},
 			{
 				name: 'Self-Scourge',
-				bonus: '+1 Chastity',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Purpose' },
+					{ modifier: 1, trait: 'Chastity' }
+				],
 				cost: 6,
 				notes: '',
 			},
 			{
 				name: 'Ceremonial Robes',
-				bonus: '+1 Decorum',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Purpose' },
+					{ modifier: 1, trait: 'Decorum' }
+				],
 				cost: 7,
 				notes: '',
 			},
 			{
 				name: 'Censer with Incense',
-				bonus: '+1 Heartiness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Purpose' },
+					{ modifier: 1, trait: 'Heartiness' }
+				],
 				cost: 8,
 				notes: '',
 			},
 			{
 				name: 'Hymnal',
-				bonus: '+1 Bardistry',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Purpose' },
+					{ modifier: 1, trait: 'Bardistry' }
+				],
 				cost: 10,
 				notes: '',
 			},
 			{
 				name: 'Mitre',
-				bonus: '+1 Authority',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Purpose' },
+					{ modifier: 1, trait: 'Authority' }
+				],
 				cost: 13,
 				notes: '',
 			},
 			{
 				name: 'Papal Bull',
-				bonus: '+1 to all Trait rolls vs. Catholic persons',
-				penalty: '-1 Glibness',
+				modifiers: [
+					{ modifier: 1, trait: 'Purpose' },
+					{ modifier: 1, trait: 'Trait rolls vs. Catholic persons' },
+					{ modifier: -1, trait: 'Glibness' }
+				],
 				cost: 15,
-				notes: "One-time use: break the seal and read the contents. Make a Luck roll (Strewthing/Spamming as normal). If the result is 4+, your sins are forgiven. Return all your Demerits. If the result is 2-3, it's just some spilled wine. Maybe blood. Whatever. If it's a 1, you are declared a heretic! ",
+				notes: "One-time use: break the seal and read the contents. Make a Luck roll (Strewthing/Spamming as normal). If the result is 4+, your sins are forgiven. Return all your Demerits. If the result is 2-3, it's just some spilled wine. Maybe blood. Whatever. If it's a 1, you are declared a heretic!",
 			},
 			{
 				name: 'A Halo and Two Cherubs',
-				bonus: '+1 to all Trait rolls vs. painters',
-				penalty: '-1 Subtlety',
+				modifiers: [
+					{ modifier: 1, trait: 'Purpose' },
+					{ modifier: 1, trait: 'Trait rolls vs. painters' },
+					{ modifier: -1, trait: 'Subtlety' }
+				],
 				cost: 25,
 				notes: '',
 			},
 			{
 				name: 'Holy Hand Grenade of Antioch',
-				bonus: '+1 Strategy',
-				penalty: '-1 Valour',
+				modifiers: [
+					{ modifier: 1, trait: 'Purpose' },
+					{ modifier: 1, trait: 'Strategy' },
+					{ modifier: -1, trait: 'Valour' }
+				],
 				cost: 100,
 				notes: "One-time use: make a Strategy roll (Strewthing/Spamming as normal). If the result is 3 or 5, you've miscounted; it explodes in your hand, and you take 1 bit of Death. Otherwise (assuming it's not a Spam), you lobbeth the grenade, yea verily, with much accuracy, and cause a single person or creature to snuff it.",
 			},
@@ -1229,71 +1521,93 @@ export const traits: Traits = {
 		accoutrements: [
 			{
 				name: 'Staff',
-				bonus: '+1 Heartiness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Sorcery' },
+					{ modifier: 1, trait: 'Heartiness' }
+				],
 				cost: 3,
 				notes: 'Sheep tend to follow you around.',
 			},
 			{
 				name: 'Wand',
-				bonus: '+1 Sorcery',
-				penalty: '',
+				modifiers: [
+					{ modifier: 2, trait: 'Sorcery' }
+				],
 				cost: 4,
 				notes: '',
 			},
 			{
 				name: 'Shrunken Head',
-				bonus: '+1 Lorefulness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Sorcery' },
+					{ modifier: 1, trait: 'Lorefulness' }
+				],
 				cost: 6,
 				notes: '',
 			},
 			{
 				name: 'Pointy Hat',
-				bonus: '+1 Wisdom in the Ways of Science',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Sorcery' },
+					{ modifier: 1, trait: 'Wisdom in the Ways of Science' }
+				],
 				cost: 7,
 				notes: '',
 			},
 			{
 				name: 'Cauldron',
-				bonus: '+1 to all Trait rolls vs. Witches and cooks',
-				penalty: '-1 Nimbleness',
+				modifiers: [
+					{ modifier: 1, trait: 'Sorcery' },
+					{ modifier: 1, trait: 'Trait rolls vs. Witches and cooks' },
+					{ modifier: -1, trait: 'Nimbleness' }
+				],
 				cost: 9,
 				notes: '',
 			},
 			{
 				name: 'Feather Boa',
-				bonus: '+1 Glibness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Sorcery' },
+					{ modifier: 1, trait: 'Glibness' }
+				],
 				cost: 10,
 				notes: '',
 			},
 			{
 				name: 'Starry Robes',
-				bonus: '+1 Purpose',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Sorcery' },
+					{ modifier: 1, trait: 'Purpose' }
+				],
 				cost: 11,
 				notes: '',
 			},
 			{
 				name: 'Crystal Ball',
-				bonus: '+1 Strategy',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Sorcery' },
+					{ modifier: 1, trait: 'Strategy' }
+				],
 				cost: 16,
 				notes: 'If anyone sees it, they ask you to tell their fortune.',
 			},
 			{
 				name: 'Interspace Toothbrush',
-				bonus: '+1 to all Trait rolls vs. Møøses',
-				penalty: '-1 Decorum',
+				modifiers: [
+					{ modifier: 1, trait: 'Sorcery' },
+					{ modifier: 1, trait: 'Trait rolls vs. Møøses' },
+					{ modifier: -1, trait: 'Decorum' }
+				],
 				cost: 25,
 				notes: 'Møøses attack you on sight.',
 			},
 			{
 				name: 'Police Wand',
-				bonus: '+1 Authority; +3 to all Trait rolls vs. outlaws, criminals, bandits, and the like',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Sorcery' },
+					{ modifier: 1, trait: 'Authority' },
+					{ modifier: 3, trait: 'Trait rolls vs. outlaws, criminals, bandits, and the like' }
+				],
 				cost: 100,
 				notes: 'One-time use (roll a d6 to see which effect you get). 1 = Turn yourself invisible for the day. 2 = Commit one act of time-travelling or teleportation. 3 = Turn all nearby bandits and other violent criminals into frogs. 4 = Make your whole party invisible for the day. 5 = Must help all old ladies you encounter across the road. For the rest of your life. 6 = Choose one from 1-5.',
 			},
@@ -1304,71 +1618,94 @@ export const traits: Traits = {
 		accoutrements: [
 			{
 				name: 'Book of Trojan Woodland Creatures',
-				bonus: '+1 Lorefulness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Strategy' },
+					{ modifier: 1, trait: 'Lorefulness' }
+				],
 				cost: 1,
 				notes: '',
 			},
 			{
 				name: 'Sling',
-				bonus: '+1 Druidry',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Strategy' },
+					{ modifier: 1, trait: 'Druidry' }
+				],
 				cost: 2,
 				notes: '',
 			},
 			{
 				name: 'Dice',
-				bonus: '+1 Luck',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Strategy' },
+					{ modifier: 1, trait: 'Luck' }
+				],
 				cost: 3,
 				notes: '',
 			},
 			{
 				name: 'Ladder',
-				bonus: '+1 Authority',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Strategy' },
+					{ modifier: 1, trait: 'Authority' }
+				],
 				cost: 8,
 				notes: '',
 			},
 			{
 				name: 'Longbow',
-				bonus: '+1 to all rolls vs. French persons',
-				penalty: '-1 Subtlety',
+				modifiers: [
+					{ modifier: 1, trait: 'Strategy' },
+					{ modifier: 1, trait: 'Trait rolls vs. French persons' },
+					{ modifier: -1, trait: 'Subtlety' }
+				],
 				cost: 10,
 				notes: '',
 			},
 			{
 				name: 'Chessboard',
-				bonus: '+1 Decorum',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Strategy' },
+					{ modifier: 1, trait: 'Decorum' }
+				],
 				cost: 13,
 				notes: '',
 			},
 			{
 				name: 'Fetchez la Vache Set (travel size)',
-				bonus: '+1 to all Trait rolls while playing (life-size) Fetchez la Vache',
-				penalty: '-1 Animal Husbandry',
+				modifiers: [
+					{ modifier: 1, trait: 'Strategy' },
+					{ modifier: 1, trait: 'Trait rolls while playing (life-size) Fetchez la Vache' },
+					{ modifier: -1, trait: 'Animal Husbandry' }
+				],
 				cost: 15,
 				notes: '',
 			},
 			{
 				name: 'Crossbow',
-				bonus: '+1 to all rolls vs. armoured persons',
-				penalty: '-1 Nimbleness',
+				modifiers: [
+					{ modifier: 1, trait: 'Strategy' },
+					{ modifier: 1, trait: 'Trait rolls vs. armoured persons' },
+					{ modifier: -1, trait: 'Nimbleness' }
+				],
 				cost: 17,
 				notes: '',
 			},
 			{
 				name: "Maurice's Strategikon",
-				bonus: '+1 Heartiness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Strategy' },
+					{ modifier: 1, trait: 'Heartiness' }
+				],
 				cost: 20,
 				notes: 'A sixth-century Byzantine military manual covering campaign logistics, fortifications, and tactics.',
 			},
 			{
 				name: 'Siege Engine',
-				bonus: '+1 to all Trait rolls vs. becastled persons',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Strategy' },
+					{ modifier: 1, trait: 'Trait rolls vs. becastled persons' }
+				],
 				cost: 100,
 				notes: "Requires four people to haul and operate. Roll a d6 to determine type. 1 = Battering ram. 2 = Ballista. 3 = Catapult. 4 = Trebuchet. 5 = Portable drawbridge. 6 = Siege tower. All types have a one-time use: bring down or bypass a castle's fortifications. The Siege Engine is destroyed in the process, but you're in!",
 			},
@@ -1379,146 +1716,188 @@ export const traits: Traits = {
 		accoutrements: [
 			{
 				name: 'Padded Footwear',
-				bonus: '+1 Druidry',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Subtlety' },
+					{ modifier: 1, trait: 'Druidry' }
+				],
 				cost: 5,
 				notes: '',
 			},
 			{
 				name: 'Snare Trap',
-				bonus: '+1 to all Trait rolls vs. Beasts',
-				penalty: '-1 Animal Husbandry',
+				modifiers: [
+					{ modifier: 1, trait: 'Subtlety' },
+					{ modifier: 1, trait: 'Trait rolls vs. Beasts' },
+					{ modifier: -1, trait: 'Animal Husbandry' }
+				],
 				cost: 6,
 				notes: '',
 			},
 			{
 				name: 'Grappling Hook and a Coil of Rope',
-				bonus: '+1 Strategy',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Subtlety' },
+					{ modifier: 1, trait: 'Strategy' }
+				],
 				cost: 7,
 				notes: '',
 			},
 			{
 				name: 'Hooded Cloak with Questionable Tassel',
-				bonus: '+1 Glibness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Subtlety' },
+					{ modifier: 1, trait: 'Glibness' }
+				],
 				cost: 8,
 				notes: '',
 			},
 			{
 				name: 'Lock Picks',
-				bonus: '+1 Nimbleness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Subtlety' },
+					{ modifier: 1, trait: 'Nimbleness' }
+				],
 				cost: 10,
 				notes: '',
 			},
 			{
 				name: 'A History of Naughty People by R.T. Sampson',
-				bonus: '+1 Lorefulness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Subtlety' },
+					{ modifier: 1, trait: 'Lorefulness' }
+				],
 				cost: 17,
 				notes: "Sadly, it's an encyclopaedia of criminality, not a titillating picture book.",
 			},
 			{
 				name: 'Heart Attack-o Margarine (tub of)',
-				bonus: '+1 Heartiness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Subtlety' },
+					{ modifier: 1, trait: 'Heartiness' }
+				],
 				cost: 21,
 				notes: 'One-time use: if a person or creature consumes the entire tub, their arteries become instantly clogged and they are No More. ',
 			},
 			{
 				name: 'LLAP-GOCH Picture Book',
-				bonus: '+1 Valour',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Subtlety' },
+					{ modifier: 1, trait: 'Valour' }
+				],
 				cost: 22,
 				notes: 'The secret Welsh art of self-defence that requires no intelligence, strength, or physical courage. Among its many fantastic secrets: the most vital element of attack is surprise (Oscar Hammerstein).',
 			},
 			{
 				name: 'Brazilian Dagger',
-				bonus: '',
-				penalty: '',
+				modifiers: [{ modifier: 1, trait: 'Subtlety' }],
 				cost: 25,
 				notes: "If you unsheath it, your Luck (if you have it as a Trait) resets to d4. One-time use: if you can get another person to use it, horrible things begin happening to them. Ultimately this results in the person being made dead and the dagger being destroyed, and it's always messy",
 			},
 			{
 				name: 'Whizzo Assorted Chocolates (box of)',
-				bonus: '+1 Decorum',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Subtlety' },
+					{ modifier: 1, trait: 'Decorum' }
+				],
 				cost: 100,
 				notes: 'One-time use: if you convince or trick someone into eating all six, they are No More.',
 			},
 		],
+
 	},
 	'Valour': {
 		trait: 'Valour',
 		accoutrements: [
 			{
 				name: 'Knightly Armour',
-				bonus: '+1 Authority',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Valour' },
+					{ modifier: 1, trait: 'Authority' }
+				],
 				cost: '0-48',
 				notes: "Roll a d8 to determine type. 1 = Gambeson. 2 = Leather jack. 3 = Breastplate. 4 = Chain mail. 5 = Ring mail. 6 = Scale mail. 7 = Plate mail. 8 = Armour of Faith (you're naked). Cost is the number rolled x 6, except for Armour of Faith, which is free!",
 			},
 			{
 				name: 'Shield',
-				bonus: '+1 Strategy',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Valour' },
+					{ modifier: 1, trait: 'Strategy' }
+				],
 				cost: '2-8',
 				notes: 'Roll a d4 to determine type. 1 = Buckler. 2 = Wooden round shield. 3 = Heater. 4 = Kite shield. Cost is the number rolled x 2.',
 			},
 			{
 				name: 'Knightly Helmet',
-				bonus: '+1 Luck',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Valour' },
+					{ modifier: 1, trait: 'Luck' }
+				],
 				cost: '3-24',
 				notes: "Roll a d8 to determine type. 1 = A bucket. Not a bucket helmet. An actual wooden bucket. 2 = Leather cap. 3 = Viking. 4 = Frenchie Norman. 5 = Sallet. 6 = Kettle. 7 = Boar's tusk. 8 = Great helm. Cost is the number rolled x 3.",
 			},
 			{
 				name: 'Knightly Weapon',
-				bonus: '+1 Argumentation',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Valour' },
+					{ modifier: 1, trait: 'Argumentation' }
+				],
 				cost: '3-24',
 				notes: 'Roll a d8 to determine type. 1 = Pointed stick. 2 = Club. 3 = Spear. 4 = Mace. 5 = War hammer. 6 = Flail. 7 = Longsword. 8 = Battle axe. Cost is the number rolled x 3.',
 			},
 			{
 				name: 'Knightly Fresh Fruit',
-				bonus: '+1 Heartiness',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Valour' },
+					{ modifier: 1, trait: 'Heartiness' }
+				],
 				cost: 5,
 				notes: 'Roll a d16 to determine type. 1 = Loganberries. 2 = Passion fruit. 3 = Orange. 4 = Apple. 5 = Grapefruit (whole). 6 = Grapefruit (segmented). 7 = Greengages. 8 = Grapes. 9 = Lemons. 10 = Plum. 11 = Mangoes in syrup. 12 = Cherry (red). 13 = Cherry (black). 14 = Raspberry. 15 = Peach. 16 = Banana.',
 			},
 			{
 				name: 'Polearm',
-				bonus: '+1 to all Trait rolls vs. Lower-Class persons',
-				penalty: '-1 Nimbleness',
+				modifiers: [
+					{ modifier: 1, trait: 'Valour' },
+					{ modifier: 1, trait: 'Trait rolls vs. Lower-Class persons' },
+					{ modifier: -1, trait: 'Nimbleness' }
+				],
 				cost: 11,
-				notes: "Roll a d8 to determine type. 1 = Bill. 2 = Pick. 3 = Glaive. 4 = Poleaxe. 5 = Halberd. 6 = Bardiche. 7 = Ear spoon. 8 = Just make up a name. If there's one called an ‘ear spoon', there's clearly no rhyme or reason to these things.",
+				notes: "Roll a d8 to determine type. 1 = Bill. 2 = Pick. 3 = Glaive. 4 = Poleaxe. 5 = Halberd. 6 = Bardiche. 7 = Ear spoon. 8 = Just make up a name. If there's one called an 'ear spoon', there's clearly no rhyme or reason to these things.",
 			},
 			{
 				name: 'Jousting Lance',
-				bonus: '+1 to all Trait rolls vs. Knights',
-				penalty: '-1 Animal Husbandry',
+				modifiers: [
+					{ modifier: 1, trait: 'Valour' },
+					{ modifier: 1, trait: 'Trait rolls vs. Knights' },
+					{ modifier: -1, trait: 'Animal Husbandry' }
+				],
 				cost: 18,
 				notes: '',
 			},
 			{
 				name: 'Longersword',
-				bonus: '+1 Purpose',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Valour' },
+					{ modifier: 1, trait: 'Purpose' }
+				],
 				cost: 25,
 				notes: '',
 			},
 			{
 				name: 'Vicious Axe',
-				bonus: '+1 to all Trait rolls vs. Monstrosities',
-				penalty: '-1 Decorum',
+				modifiers: [
+					{ modifier: 1, trait: 'Valour' },
+					{ modifier: 1, trait: 'Trait rolls vs. Monstrosities' },
+					{ modifier: -1, trait: 'Decorum' }
+				],
 				cost: 25,
 				notes: '',
 			},
 			{
 				name: 'The Burlington Wallbanger',
-				bonus: 'Extra +1 Valour',
-				penalty: '-1 Subtlety',
+				modifiers: [
+					{ modifier: 2, trait: 'Valour' },
+					{ modifier: -1, trait: 'Subtlety' },
+				],
 				cost: 100,
 				notes: "Large gold-plated club for hitting walls, amongst other things. Comes with a fancy wall rack that requires a Retainer to nail it to. One-time use: bring down a wall of any size. The Wallbanger is destroyed in the process, but you're in!",
 			},
@@ -1529,71 +1908,95 @@ export const traits: Traits = {
 		accoutrements: [
 			{
 				name: 'Sundial',
-				bonus: '+1 Druidry',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Wisdom in the Ways of Science' },
+					{ modifier: 1, trait: 'Druidry' }
+				],
 				cost: 4,
 				notes: 'Large. Stone. Requires a cart to transport. Useless at night, but surely you knew that.',
 			},
 			{
 				name: 'Sulphur Powder, Iron Filings, and a Magnet',
-				bonus: '+1 Chastity',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Wisdom in the Ways of Science' },
+					{ modifier: 1, trait: 'Chastity' }
+				],
 				cost: 7,
 				notes: '',
 			},
 			{
 				name: 'Scales (large)',
-				bonus: '+1 Authority',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Wisdom in the Ways of Science' },
+					{ modifier: 1, trait: 'Authority' }
+				],
 				cost: 9,
 				notes: 'Requires a cart to transport.',
 			},
 			{
 				name: 'Abacus, Protractor, Ruler, and Compass',
-				bonus: '+1 to all Trait rolls vs. Shoppekeepers, Burghers, merchants, and the like',
-				penalty: '-1 Glibness',
+				modifiers: [
+					{ modifier: 1, trait: 'Wisdom in the Ways of Science' },
+					{ modifier: 1, trait: 'Trait rolls vs. Shoppekeepers, Burghers, merchants, and the like' },
+					{ modifier: -1, trait: 'Glibness' }
+				],
 				cost: 12,
 				notes: 'If carried openly, these objects cause children to flee in terror.',
 			},
 			{
 				name: 'Scales (reasonable)',
-				bonus: '+1 Bardistry',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Wisdom in the Ways of Science' },
+					{ modifier: 1, trait: 'Bardistry' }
+				],
 				cost: 13,
 				notes: '',
 			},
 			{
 				name: 'Powders that Burn in Different Colours',
-				bonus: '+1 Subtlety',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Wisdom in the Ways of Science' },
+					{ modifier: 1, trait: 'Subtlety' }
+				],
 				cost: 16,
 				notes: '',
 			},
 			{
 				name: 'Silver Trophy for Achievement in Science',
-				bonus: '+1 Argumentation',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Wisdom in the Ways of Science' },
+					{ modifier: 1, trait: 'Argumentation' }
+				],
 				cost: 23,
-				notes: "Often confused for the Holy Grail. One-time use: melt it down for 23 Gold (currency). Don't ask, ‘But isn't it made of silver?' You'll only embarrass yourself. ",
+				notes: "Often confused for the Holy Grail. One-time use: melt it down for 23 Gold (currency). Don't ask, 'But isn't it made of silver?' You'll only embarrass yourself. ",
 			},
 			{
 				name: 'Alchemical Equipment',
-				bonus: '+1 Druidry',
-				penalty: '',
+				modifiers: [
+					{ modifier: 1, trait: 'Wisdom in the Ways of Science' },
+					{ modifier: 1, trait: 'Druidry' }
+				],
 				cost: 24,
 				notes: '',
 			},
 			{
 				name: 'Astrolabe',
-				bonus: '+1 to all Trait rolls vs. astrologers, scientists, and other forward-thinkers',
-				penalty: '-1 Purpose',
+				modifiers: [
+					{ modifier: 1, trait: 'Wisdom in the Ways of Science' },
+					{ modifier: 1, trait: 'Trait rolls vs. astrologers, scientists, and other forward-thinkers' },
+					{ modifier: -1, trait: 'Purpose' }
+				],
 				cost: 25,
 				notes: 'Useless in daytime, birdbrain.',
 			},
 			{
 				name: "The Philosopher's Stone",
-				bonus: '+1 Purpose, +1 Lorefulness',
-				penalty: '-1 Heartiness',
+				modifiers: [
+					{ modifier: 1, trait: 'Wisdom in the Ways of Science' },
+					{ modifier: 1, trait: 'Purpose' },
+					{ modifier: 1, trait: 'Lorefulness' },
+					{ modifier: -1, trait: 'Heartiness' }
+				],
 				cost: 100,
 				notes: 'One-time use: resurrect someone (including yourself ) who is No More OR Transform any base metal into Gold (Currency). Roll a d20 ten times to see how much you get.',
 			},

@@ -4,6 +4,7 @@
 	import { situations, traits, retainers } from '$lib/data';
 	import { DiceRoll } from '@dice-roller/rpg-dice-roller';
 	import { toast } from '@zerodevx/svelte-toast';
+	import AccDetails from '../components/AccDetails.svelte';
 
 	let name = '';
 	let situation = '';
@@ -184,7 +185,7 @@
 	}
 
 	function getDefaultAccoutrement(): AccoutrementDetail {
-		return { name: '', bonus: '', penalty: '', cost: '', notes: '' };
+		return { name: '', modifiers: [], cost: '', notes: '' };
 	}
 
 	function getAccoutrementDetails(
@@ -414,6 +415,30 @@
 		return retainers[traitName] !== undefined;
 	}
 
+	function rollTraitDice(diceVal: number, traitName: string): number {
+		let diceRoll = `1d${diceVal}`;
+		selectedTraits.forEach((trait) => {
+			if (trait.name === traitName) {
+				const accoutrements = Array.isArray(trait.accoutrement)
+					? trait.accoutrement
+					: [trait.accoutrement];
+				accoutrements.forEach((accoutrement) => {
+					if (accoutrement !== 'none' && accoutrement !== '') {
+						getAccoutrementDetails(traitName, accoutrement).modifiers.forEach((mod) => {
+							if (mod.trait === traitName) {
+								diceRoll += mod.modifier > 0 ? '+' : '';
+								diceRoll += mod.modifier;
+							}
+						});
+					}
+				});
+			}
+		});
+		let roll = new DiceRoll(diceRoll);
+		toast.push(`Rolling for ${traitName}: ${roll.output}`, { duration: 8000 });
+		return roll.total;
+	}
+
 	loadFromStore();
 </script>
 
@@ -569,13 +594,21 @@
 			{#each traitHeaderData as _, columnIndex}
 				<div class="checkbox-wrapper">
 					<input
+						id={`checkbox-${traitIndex}-${columnIndex}`}
 						type="checkbox"
 						class="grid-checkbox"
+						class:cursor-pointer={selectedTraits[traitIndex].selectedCheckbox ===
+							columnIndex}
 						style={selectedTraits[traitIndex].selectedCheckbox === columnIndex
 							? `background-color: ${traitHeaderData[columnIndex].color}; border: 2px solid ${traitHeaderData[columnIndex].color};`
 							: ''}
 						disabled={isRetainer(name)}
 						checked={selectedTraits[traitIndex].selectedCheckbox === columnIndex}
+						on:click={() => {
+							if (selectedTraits[traitIndex].selectedCheckbox === columnIndex) {
+								rollTraitDice(traitHeaderData[columnIndex].diceVal, name);
+							}
+						}}
 						on:change={(event) =>
 							handleCheckboxChange(
 								traitIndex,
@@ -584,6 +617,14 @@
 								event.target,
 							)}
 					/>
+					{#if selectedTraits[traitIndex].selectedCheckbox === columnIndex}
+						<label
+							for={`checkbox-${traitIndex}-${columnIndex}`}
+							class="text-center"
+							style="position: absolute; margin: 0; pointer-events: none; font-weight: bold;"
+							>ROLL</label
+						>
+					{/if}
 				</div>
 			{/each}
 			<div>
@@ -656,10 +697,9 @@
 						</select>
 						{#if accoutrement !== 'none' && accoutrement !== ''}
 							<div class="accoutrement-details">
-								<p>{getAccoutrementDetails(name, accoutrement).bonus}</p>
-								<p>{getAccoutrementDetails(name, accoutrement).penalty}</p>
-								<p>Cost: {getAccoutrementDetails(name, accoutrement).cost}</p>
-								<p>{getAccoutrementDetails(name, accoutrement).notes}</p>
+								<AccDetails
+									accoutrement={getAccoutrementDetails(name, accoutrement)}
+								/>
 							</div>
 						{/if}
 					{:else}
@@ -681,24 +721,12 @@
 							</select>
 							{#if accoutrement[accoutIndex] !== 'none' && accoutrement[accoutIndex] !== ''}
 								<div class="accoutrement-details">
-									<p>
-										{getAccoutrementDetails(name, accoutrement[accoutIndex])
-											.bonus}
-									</p>
-									<p>
-										{getAccoutrementDetails(name, accoutrement[accoutIndex])
-											.penalty}
-									</p>
-									<p>
-										Cost: {getAccoutrementDetails(
+									<AccDetails
+										accoutrement={getAccoutrementDetails(
 											name,
 											accoutrement[accoutIndex],
-										).cost}
-									</p>
-									<p>
-										{getAccoutrementDetails(name, accoutrement[accoutIndex])
-											.notes}
-									</p>
+										)}
+									/>
 								</div>
 							{/if}
 						{/each}

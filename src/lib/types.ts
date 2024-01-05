@@ -54,8 +54,7 @@ export interface Retainer {
 
 export interface AccoutrementDetail {
 	name: string;
-	bonus: string;
-	penalty?: string;
+	modifiers: { modifier: number; trait: string; }[];
 	cost: string | number;
 	notes?: string;
 	associated_trait?: string;
