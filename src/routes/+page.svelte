@@ -453,7 +453,6 @@
 				<label for="name">Name:</label>
 				<input type="text" id="name" bind:value={name} on:input={saveToStore} />
 			</div>
-
 			<div class="input-group">
 				<label for="situation">Situation:</label>
 				<select id="situation" bind:value={situation} on:change={handleSituationChange}>
@@ -463,7 +462,6 @@
 					{/each}
 				</select>
 			</div>
-
 			<div class="input-group">
 				<label for="characterClass">Class:</label>
 				<select id="characterClass" bind:value={characterClass} on:change={saveToStore}>
@@ -475,7 +473,16 @@
 					{/each}
 				</select>
 			</div>
-
+			<div class="input-group">
+				<label for="indifferentTo">Indifferent to:</label>
+				<input
+					type="text"
+					id="indifferentTo"
+					bind:value={indifferentTo}
+					on:input={saveToStore}
+					placeholder="Write your indifferences here"
+				/>
+			</div>
 			<div class="input-group items-start">
 				<label for="otherStuff" class="mt-2">Other Stuff:</label>
 				<textarea id="otherStuff" bind:value={otherStuff} on:input={saveToStore} />
@@ -664,19 +671,7 @@
 			</div>
 		{/each}
 	</div>
-	<div class="indifferent-to mt-8 mb-4">
-		<div class="input-group">
-			<label for="indifferentTo">Indifferent to:</label>
-			<input
-				type="text"
-				id="indifferentTo"
-				bind:value={indifferentTo}
-				on:input={saveToStore}
-				placeholder="Write your indifferences here"
-			/>
-		</div>
-	</div>
-	<div class="accoutrements-container">
+	<div class="accoutrements-container mt-8">
 		{#each selectedTraits as { name, accoutrement }, traitIndex}
 			{#if name !== '' && name !== 'none'}
 				<div class="accoutrement-item">
@@ -881,7 +876,7 @@
 	}
 
 	textarea {
-		height: 10rem;
+		height: 6.5rem;
 	}
 
 	.class-currency-row {
@@ -1010,12 +1005,6 @@
 
 	.accoutrement-header {
 		min-height: 3em;
-	}
-
-	@media (max-width: 1045px) {
-		.accoutrement-header {
-			min-height: 5em;
-		}
 	}
 
 	.accoutrement-item .grow {
