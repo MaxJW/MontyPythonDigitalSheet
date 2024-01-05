@@ -223,7 +223,7 @@
 		}
 		const accoutrement = trait.accoutrements.find((acc) => acc.name === accoutrementName);
 		if (!accoutrement) {
-			console.error('Trait - Accoutrement not found');
+			console.error('Trait - Accoutrement not found', traitName);
 			return getDefaultAccoutrement();
 		}
 		accoutrement.associated_trait = traitName;
@@ -602,8 +602,9 @@
 						style={selectedTraits[traitIndex].selectedCheckbox === columnIndex
 							? `background-color: ${traitHeaderData[columnIndex].color}; border: 2px solid ${traitHeaderData[columnIndex].color};`
 							: ''}
+						checked={selectedTraits[traitIndex].selectedCheckbox === columnIndex &&
+							!isRetainer(name)}
 						disabled={isRetainer(name)}
-						checked={selectedTraits[traitIndex].selectedCheckbox === columnIndex}
 						on:click={() => {
 							if (selectedTraits[traitIndex].selectedCheckbox === columnIndex) {
 								rollTraitDice(traitHeaderData[columnIndex].diceVal, name);
@@ -633,8 +634,10 @@
 					disabled={selectedSituation !== null && selectedSituation !== undefined
 						? selectedSituation.mustHaveTraits.length - 1 >= traitIndex
 						: false}
-					bind:value={name}
-					on:change={() => handleTraitChange(traitIndex, name)}
+					bind:value={selectedTraits[traitIndex].name}
+					on:change={() => {
+						handleTraitChange(traitIndex, selectedTraits[traitIndex].name);
+					}}
 				>
 					<option value="none" disabled>Select a trait/retainer</option>
 					<optgroup label="Traits">
@@ -683,10 +686,11 @@
 					{#if !isRetainer(name) || !Array.isArray(accoutrement)}
 						<select
 							class="grid-dropdown"
-							bind:value={accoutrement}
+							bind:value={selectedTraits[traitIndex].accoutrement}
 							on:change={() => {
-								if (!Array.isArray(accoutrement)) {
-									handleAccoutrementChange(name, accoutrement);
+								let temp_accout = selectedTraits[traitIndex].accoutrement;
+								if (!Array.isArray(temp_accout)) {
+									handleAccoutrementChange(name, temp_accout);
 								}
 							}}
 						>
@@ -706,11 +710,11 @@
 						{#each Array(retainers[name].numberOfSelectableAccoutrements) as _, accoutIndex}
 							<select
 								class="grid-dropdown"
-								bind:value={accoutrement[accoutIndex]}
+								bind:value={selectedTraits[traitIndex].accoutrement[accoutIndex]}
 								on:change={() =>
 									handleAccoutrementChange(
 										name,
-										accoutrement[accoutIndex],
+										selectedTraits[traitIndex].accoutrement[accoutIndex],
 										accoutIndex,
 									)}
 							>
@@ -958,8 +962,8 @@
 		border: 2px solid #cea276;
 	}
 	input[type='checkbox'][disabled] {
-		background-color: #232323;
-		border: 2px solid #666666;
+		background-color: #232323 !important;
+		border: 2px solid #666666 !important;
 	}
 
 	.grid-dropdown {
