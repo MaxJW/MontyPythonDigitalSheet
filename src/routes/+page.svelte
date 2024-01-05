@@ -418,31 +418,29 @@
 </script>
 
 <section class="mx-4 md:mx-4 xl:mx-12 mb-8">
-	<button on:click={resetCharacterSheet} class="reset-button"> Reset Character Sheet </button>
 	<h1
-		class="m-2 mb-8 text-2xl font-extrabold leading-none tracking-tight md:text-3xl lg:text-4xl"
+		class="m-2 mb-6 md:mb-8 text-2xl font-extrabold leading-none tracking-tight md:text-3xl lg:text-4xl"
 	>
 		Monty Python's Cocurricular Mediaeval Reenactment Programme - Character Sheet
 	</h1>
-
-	<div class="top-row">
-		<div class="input-group">
-			<label for="name">Name:</label>
-			<input type="text" id="name" bind:value={name} on:input={saveToStore} />
-		</div>
-
-		<div class="input-group">
-			<label for="situation">Situation:</label>
-			<select id="situation" bind:value={situation} on:change={handleSituationChange}>
-				<option value="none" disabled>Select a situation</option>
-				{#each Object.keys(situations) as situationName}
-					<option value={situationName}>{situationName}</option>
-				{/each}
-			</select>
-		</div>
-	</div>
 	<div class="class-currency-row flex-col items-center md:items-start md:flex-row gap-0 md:gap-8">
 		<div class="class-other-stuff w-full md:w-5/12">
+			<h2 class="">Details</h2>
+			<div class="input-group">
+				<label for="name">Name:</label>
+				<input type="text" id="name" bind:value={name} on:input={saveToStore} />
+			</div>
+
+			<div class="input-group">
+				<label for="situation">Situation:</label>
+				<select id="situation" bind:value={situation} on:change={handleSituationChange}>
+					<option value="none" disabled>Select a situation</option>
+					{#each Object.keys(situations) as situationName}
+						<option value={situationName}>{situationName}</option>
+					{/each}
+				</select>
+			</div>
+
 			<div class="input-group">
 				<label for="characterClass">Class:</label>
 				<select id="characterClass" bind:value={characterClass} on:change={saveToStore}>
@@ -455,8 +453,8 @@
 				</select>
 			</div>
 
-			<div class="input-group">
-				<label for="otherStuff">Other Stuff:</label>
+			<div class="input-group items-start">
+				<label for="otherStuff" class="mt-2">Other Stuff:</label>
 				<textarea id="otherStuff" bind:value={otherStuff} on:input={saveToStore} />
 			</div>
 		</div>
@@ -777,6 +775,11 @@
 			</div>
 		</div>
 	</div>
+	<div class="mt-8 flex w-100 justify-center">
+		<button on:click={resetCharacterSheet} class="btn btn-xs md:btn-sm btn-error">
+			Reset Character Sheet
+		</button>
+	</div>
 </section>
 
 <style>
@@ -799,18 +802,25 @@
 	.top-row {
 		display: flex;
 		justify-content: space-between;
-		gap: 2rem;
 	}
 
 	.input-group {
 		width: 100%;
+		max-width: 100%;
+		gap: 0.2rem;
 	}
 
 	.input-group label {
 		display: flex;
 		align-items: center;
 		width: 50%;
+		max-width: 50%;
 		@apply font-bold leading-none tracking-tight;
+	}
+
+	.input-group input {
+		width: 100%;
+		min-width: 50%;
 	}
 
 	.status-group label {
@@ -856,7 +866,11 @@
 	}
 
 	.currency-grid .input-group {
-		gap: 1rem;
+		@apply items-center;
+	}
+
+	.currency-grid .input-group label {
+		@apply text-xs md:text-base;
 	}
 
 	.traits-table {
