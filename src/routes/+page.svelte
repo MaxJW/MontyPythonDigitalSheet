@@ -418,21 +418,19 @@
 	function rollTraitDice(diceVal: number, traitName: string): number {
 		let diceRoll = `1d${diceVal}`;
 		selectedTraits.forEach((trait) => {
-			if (trait.name === traitName) {
-				const accoutrements = Array.isArray(trait.accoutrement)
-					? trait.accoutrement
-					: [trait.accoutrement];
-				accoutrements.forEach((accoutrement) => {
-					if (accoutrement !== 'none' && accoutrement !== '') {
-						getAccoutrementDetails(traitName, accoutrement).modifiers.forEach((mod) => {
-							if (mod.trait === traitName) {
-								diceRoll += mod.modifier > 0 ? '+' : '';
-								diceRoll += mod.modifier;
-							}
-						});
-					}
-				});
-			}
+			const accoutrements = Array.isArray(trait.accoutrement)
+				? trait.accoutrement
+				: [trait.accoutrement];
+			accoutrements.forEach((accoutrement) => {
+				if (accoutrement !== 'none' && accoutrement !== '') {
+					getAccoutrementDetails(trait.name, accoutrement).modifiers.forEach((mod) => {
+						if (mod.trait === traitName) {
+							diceRoll += mod.modifier > 0 ? '+' : '';
+							diceRoll += mod.modifier;
+						}
+					});
+				}
+			});
 		});
 		let roll = new DiceRoll(diceRoll);
 		toast.push(`Rolling for ${traitName}: ${roll.output}`, { duration: 8000 });
@@ -598,7 +596,7 @@
 						type="checkbox"
 						class="grid-checkbox"
 						class:cursor-pointer={selectedTraits[traitIndex].selectedCheckbox ===
-							columnIndex}
+							columnIndex && !isRetainer(name)}
 						style={selectedTraits[traitIndex].selectedCheckbox === columnIndex
 							? `background-color: ${traitHeaderData[columnIndex].color}; border: 2px solid ${traitHeaderData[columnIndex].color};`
 							: ''}
@@ -618,7 +616,7 @@
 								event.target,
 							)}
 					/>
-					{#if selectedTraits[traitIndex].selectedCheckbox === columnIndex}
+					{#if selectedTraits[traitIndex].selectedCheckbox === columnIndex && !isRetainer(name)}
 						<label
 							for={`checkbox-${traitIndex}-${columnIndex}`}
 							class="text-center"
@@ -930,6 +928,7 @@
 	}
 
 	.checkbox-wrapper {
+		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: center;

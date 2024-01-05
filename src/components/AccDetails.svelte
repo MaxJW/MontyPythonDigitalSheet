@@ -3,16 +3,6 @@
 	import { traits } from '$lib/data';
 
 	export let accoutrement: AccoutrementDetail;
-
-	accoutrement.modifiers.sort((a, b) => {
-		if (traits[a.trait] && !traits[b.trait]) {
-			return 1;
-		}
-		if (!traits[a.trait] && traits[b.trait]) {
-			return -1;
-		}
-		return 0;
-	});
 </script>
 
 <p>
