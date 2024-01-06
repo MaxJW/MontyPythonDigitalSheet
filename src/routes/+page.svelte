@@ -447,7 +447,7 @@
 		Monty Python's Cocurricular Mediaeval Reenactment Programme - Character Sheet
 	</h1>
 	<div class="class-currency-row flex-col items-center md:items-start md:flex-row gap-0 md:gap-8">
-		<div class="class-other-stuff w-full md:w-5/12">
+		<div class="class-other-stuff w-full md:w-3/6">
 			<h2 class="">Details</h2>
 			<div class="input-group">
 				<label for="name">Name:</label>
@@ -489,7 +489,7 @@
 			</div>
 		</div>
 
-		<div class="currency w-full md:w-8/12">
+		<div class="currency w-full md:w-3/6">
 			<h2 class="">Currency</h2>
 			<div class="currency-grid">
 				<div class="input-group">
@@ -822,11 +822,6 @@
 
 	h3 {
 		@apply mb-2 text-xl font-extrabold tracking-tight;
-	}
-
-	.top-row {
-		display: flex;
-		justify-content: space-between;
 	}
 
 	.input-group {
