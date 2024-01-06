@@ -451,7 +451,13 @@
 			<h2 class="">Details</h2>
 			<div class="input-group">
 				<label for="name">Name:</label>
-				<input type="text" id="name" bind:value={name} on:input={saveToStore} />
+				<input
+					type="text"
+					id="name"
+					autocorrect="off"
+					bind:value={name}
+					on:input={saveToStore}
+				/>
 			</div>
 			<div class="input-group">
 				<label for="situation">Situation:</label>
