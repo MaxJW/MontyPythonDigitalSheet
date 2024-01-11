@@ -7,6 +7,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	<meta name="description" content="Monty Python Character Sheet">
+	<meta name="theme-color" content="#111728" />
 
 	<link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
 	<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
@@ -14,11 +15,11 @@
 	<link rel="manifest" href="/site.webmanifest">
 	<meta name="viewport" content="width=device-width" />
 	
-		<link rel="modulepreload" href="/_app/immutable/entry/start.N6q_TeY-.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/start.6Zgw63Dr.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/scheduler.DBam0p1X.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/singletons.Iz0POaW1.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/singletons.fIRDYoZN.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/index.BqcYsGVD.js">
-		<link rel="modulepreload" href="/_app/immutable/entry/app.B6DazMSB.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/app.wxg2MaD7.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/index.TxP4---V.js">
 </head>
 
@@ -26,7 +27,7 @@
 	<div style="display: contents">
 			<script>
 				{
-					__sveltekit_nxx0k0 = {
+					__sveltekit_13kg48r = {
 						base: "",
 						env: null
 					};
@@ -34,11 +35,17 @@
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("/_app/immutable/entry/start.N6q_TeY-.js"),
-						import("/_app/immutable/entry/app.B6DazMSB.js")
+						import("/_app/immutable/entry/start.6Zgw63Dr.js"),
+						import("/_app/immutable/entry/app.wxg2MaD7.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element);
 					});
+
+					if ('serviceWorker' in navigator) {
+						addEventListener('load', function () {
+							navigator.serviceWorker.register('/service-worker.js');
+						});
+					}
 				}
 			</script>
 		</div>
