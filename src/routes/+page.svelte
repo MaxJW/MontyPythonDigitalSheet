@@ -702,6 +702,7 @@
 							<div class="accoutrement-details">
 								<AccDetails
 									accoutrement={getAccoutrementDetails(name, accoutrement)}
+									{selectedTraits}
 								/>
 							</div>
 						{/if}
@@ -729,6 +730,7 @@
 											name,
 											accoutrement[accoutIndex],
 										)}
+										{selectedTraits}
 									/>
 								</div>
 							{/if}
