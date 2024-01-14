@@ -576,7 +576,7 @@
 		</div>
 	</div>
 	<h2>Traits/Retainers</h2>
-	<div class="traits-table">
+	<div class="traits-table mb-8">
 		{#each traitHeaderData as { label, imageSrc, diceVal, color }, columnIndex}
 			<div
 				class="grid-header cursor-pointer"
@@ -677,11 +677,16 @@
 			</div>
 		{/each}
 	</div>
-	<div class="accoutrements-container mt-8">
+	<h2>
+		Accoutrements <span class=""
+			>(modifiers in <strong>bold</strong> are untracked in dice rolls)</span
+		>
+	</h2>
+	<div class="accoutrements-container">
 		{#each selectedTraits as { name, accoutrement }, traitIndex}
 			{#if name !== '' && name !== 'none'}
 				<div class="accoutrement-item">
-					<h3 class="accoutrement-header">{name} Accoutrement</h3>
+					<h3 class="accoutrement-header">{name}</h3>
 					{#if !isRetainer(name) || !Array.isArray(accoutrement)}
 						<select
 							class="grid-dropdown"
@@ -826,6 +831,14 @@
 
 	h2 {
 		@apply mb-2 text-2xl font-extrabold tracking-tight;
+	}
+
+	h2 span {
+		@apply text-lg font-medium text-gray-400;
+	}
+
+	h2 span strong {
+		@apply font-extrabold;
 	}
 
 	h3 {
